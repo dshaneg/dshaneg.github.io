@@ -30,7 +30,7 @@ If you go searching, the web will turn up all kinds of hits that will tell you h
 your external diff and merge tools for git. The command line is great, but in this case, I think it's easier to just open the .gitconfig file
 and start typing.
 
-# .gitconfig
+## .gitconfig
 
 The .gitconfig file lives in your home directory (I'm going to assume you're running Windows here). So if you open up
 `C:/Users/yourusername`, you'll see a .gitconfig file sitting there (I'm also assuming you already have git installed). Open that file with
@@ -70,7 +70,7 @@ git mergetool
 and git will open p4merge with your conflicts loaded in, ready for you to do some resolving. When you're done with the resolutions,
 save the files and commit your changes and your merge is complete.
 
-# dealing with backup files
+## dealing with backup files
 
 Git is pretty careful, so by default it will save the original files that you merged (the ones with the conflict markers in them)
 as the filename with a `.orig` extension. You'll either need to delete these or at least add `*.orig` to your .gitignore file. You
@@ -84,7 +84,7 @@ keepBackup = false
 This setting will convince git to cease and desist polluting your directories with `.orig` files. (I would recommend adding the `*.orig`
 line to .gitignore as well, in case any of your teammates are not taking advantage of the `keepBackup = false` setting)
 
-# setting up the diff tool
+## setting up the diff tool
 
 p4merge can also be used to compare files without trying to merge them. You can tell git to use p4merge for diffs by setting up a couple
 more entries in the .gitconfig file. If you're using Visual Studio Code, you'll probably always use the excellent comparison feature that
@@ -112,7 +112,7 @@ git difftool
 
 on the command line to have git open p4merge for you and send it the files to compare.
 
-# declaring more tools
+## declaring more tools
 
 Git allows you to declare as many merge or diff tools as you want, then uses the [merge] or [diff] sections to select the name of the tool it uses.
 Using this capability, you can set up all of the options from above and switch between them to see which you like best. Rather than step through each
@@ -160,7 +160,7 @@ git config --global diff.tool diffmerge
 
 You get the idea.
 
-# git merge success
+## git merge success
 
 You should now have at least one external merge tool set up so that you can easily conquer the next merge conflict
 that git and your teammates throw at you. Now get out there and build something!
