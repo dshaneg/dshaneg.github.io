@@ -1,6 +1,6 @@
 ---
 layout: post
-title: git mergetool setup with p4merge
+title: git mergetool setup with p4merge et al
 ---
 
 Here's how to get rolling with a good visual merge tool for git.
