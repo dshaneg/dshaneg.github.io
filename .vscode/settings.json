@@ -7,5 +7,7 @@
     "MD013": false,
     "MD002": false,
     "MD041": false
-  }
+  },
+
+  "beautify.onSave": false
 }
