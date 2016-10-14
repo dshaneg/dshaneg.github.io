@@ -27,14 +27,14 @@ this seems to be the most up-to-date tool in the list, and I like the 4-pane vie
 the common ancestor file, and on the bottom, a pane where you do the merging.
 
 If you go searching, the web will turn up all kinds of hits that will tell you how to run `git commit --global blah blah blah` to set up
-your external diff and merge tools for git. The command line is great, but in this case, I think it's easier to just open the .gitconfig file
+your external diff and merge tools for git. The command line is great, but in this case, I think it's easier to just open the `.gitconfig` file
 and start typing.
 
 ## editing .gitconfig for fun and profit
 
-The .gitconfig file lives in your home directory (I'm going to assume you're running Windows here). So if you open up
-`C:/Users/yourusername`, you'll see a .gitconfig file sitting there (I'm also assuming you already have git installed). Open that file with
-your favorite text editor. You'll notice that this thing looks like a plain old-fashioned .ini file, because it pretty much is just that.
+The `.gitconfig` file lives in your home directory (I'm going to assume you're running Windows here). So if you open up
+`C:/Users/yourusername`, you'll see a `.gitconfig` file sitting there (I'm also assuming you already have git installed). Open that file with
+your favorite text editor. You'll notice that this thing looks like a plain old-fashioned `.ini` file, because it pretty much is just that.
 
 I'm going to describe the sections we need to add in the reverse order of how you most often see them in the file.
 Seems dumb, but this order makes more sense to me in understanding how the file works.
@@ -50,8 +50,8 @@ To set up your external merge tool, you'll need to add some lines. First, we'll 
 This section defines the tool's name and tells git how to call it. You'll also notice that we can't trust it to give us a valid exit code.
 That's OK. It doesn't mean the tool sucks; it just means somebody got lazy. (DiffMerge does not shirk this responsibility BTW)
 
-The .gitconfig file allows you to declare as many mergetools as you want. All you need to do is give each one a different name in the
-section header. More on this later...
+The `.gitconfig` file allows you to declare as many mergetools as you want. All you need to do is give each one a different name in the
+section header. *More on this later...*
 
 Now that we've defined the tool, let's tell git that we want to use it. Let's add another section.
 
@@ -73,8 +73,8 @@ save the files and commit your changes and your merge is complete.
 ## dealing with backup files - who needs backups anyway?
 
 Git is pretty careful, so by default it will save the original files that you merged (the ones with the conflict markers in them)
-as the filename with a `.orig` extension. You'll either need to delete these or at least add `*.orig` to your .gitignore file. You
-could also tell git to stop being so darned conservative and turn off the backups with another entry in the .gitignore file.
+as the filename with a `.orig` extension. You'll either need to delete these or at least add `*.orig` to your `.gitignore` file. You
+could also tell git to stop being so darned conservative and turn off the backups with another entry in the `.gitignore` file.
 
 ```ini
 [mergetool]
@@ -82,29 +82,30 @@ keepBackup = false
 ```
 
 This setting will convince git to cease and desist polluting your directories with `.orig` files. (I would recommend adding the `*.orig`
-line to .gitignore as well, in case any of your teammates are not taking advantage of the `keepBackup = false` setting)
+line to `.gitignore` as well, in case any of your teammates are not taking advantage of the `keepBackup = false` setting)
 
 ## setting up the diff tool - same song, second verse
 
 p4merge can also be used to compare files without trying to merge them. You can tell git to use p4merge for diffs by setting up a couple
-more entries in the .gitconfig file. If you're using Visual Studio Code, you'll probably always use the excellent comparison feature that
+more entries in the `.gitconfig` file. If you're using Visual Studio Code, you'll probably always use the excellent comparison feature that
 is built in on the git tab of the application, but for completeness' sake, let's walk through the steps.
 
 The concept is the same as for the mergetool, except now we're setting up difftool and the command line has fewer options to deal with.
+You'll need to add...
 
 ```ini
 [difftool "p4merge"]
   cmd = C:/Program\\ Files/Perforce/p4merge.exe \"$LOCAL\" \"$REMOTE\"
 ```
 
-to declare the difftool and
+...to declare the difftool and...
 
 ```ini
 [diff]
   tool = p4merge
 ```
 
-to assign p4merge as your diff tool of choice. Now, you just type
+...to assign p4merge as your diff tool of choice. Now, you just type
 
 ```sh
 git difftool
@@ -116,7 +117,7 @@ on the command line to have git open p4merge for you and send it the files to co
 
 Git allows you to declare as many merge or diff tools as you want, then uses the [merge] or [diff] sections to select the name of the tool it uses.
 Using this capability, you can set up all of the options from above and switch between them to see which you like best. Rather than step through each
-one individually, I'll just paste in the pertinent parts of my .gitconfig file.
+one individually, I'll just paste in the pertinent parts of my `.gitconfig` file.
 
 ```ini
 [diff]
