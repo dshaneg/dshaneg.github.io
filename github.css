@@ -240,6 +240,7 @@ span.float-right {
     margin: 13px auto 0;
     text-align: right; }
 
+/*
 code, tt {
   margin: 0 2px;
   padding: 0 5px;
@@ -247,6 +248,7 @@ code, tt {
   border: 1px solid #eaeaea;
   background-color: #f8f8f8;
   border-radius: 3px; }
+*/
 
 pre code {
   margin: 0;
