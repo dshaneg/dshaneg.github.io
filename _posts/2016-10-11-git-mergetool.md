@@ -18,9 +18,9 @@ Here's a short list.
 
 | tool | notes
 | --- | --- |
-| [KDiff3](https://sourceforge.net/projects/kdiff3/files/) | built in linux for linux; ported to windows as kind of an afterthought
-| [DiffMerge](https://sourcegear.com/diffmerge/downloads.php) | built by the sourcegear folks. I used this one fairly heavily for a while
-| [p4merge](https://www.perforce.com/downloads/helix#product-10) | Part of the Perforce distribution, but git doesn't mind if you use tools from another SCM. To get to the bits from that link, scroll down to ***Helix P4V: Visual Client***. When the installer asks which applications you want, turn off everything but p4merge.
+| [KDiff3](https://sourceforge.net/projects/kdiff3/files/) | built in linux for linux; ported to windows as kind of an afterthought.
+| [DiffMerge](https://sourcegear.com/diffmerge/downloads.php) | built by the sourcegear folks; I used this one fairly heavily for a while.
+| [p4merge](https://www.perforce.com/downloads/helix#product-10) | part of the Perforce distribution, but git doesn't mind if you use tools from another SCM. To get to the bits from that link, scroll down to ***Helix P4V: Visual Client***. When the installer asks which applications you want, turn off everything but p4merge.
 
 Any of these tools will work great for you, but I like p4merge the best nowadays. The UI takes a few minutes to understand, but
 this seems to be the most up-to-date tool in the list, and I like the 4-pane view. (It shows you the local file, the file you're merging from,
