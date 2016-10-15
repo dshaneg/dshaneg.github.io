@@ -111,7 +111,7 @@ You'll need to add...
 git difftool
 ```
 
-on the command line to have git open p4merge for you and send it the files to compare.
+...on the command line to have git open p4merge for you and send it the files to compare.
 
 ## declaring more tools - not a necessary step
 
