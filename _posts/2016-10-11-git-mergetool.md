@@ -26,7 +26,7 @@ Any of these tools will work great for you, but I like p4merge the best nowadays
 this seems to be the most up-to-date tool in the list, and I like the 4-pane view. (It shows you the local file, the file you're merging from,
 the common ancestor file, and on the bottom, a pane where you do the merging.
 
-If you go searching, the web will turn up all kinds of hits that will tell you how to run `git commit --global blah blah blah` to set up
+If you go searching, the web will turn up all kinds of hits that will tell you how to run `git config --global blah blah blah` to set up
 your external diff and merge tools for git. The command line is great, but in this case, I think it's easier to just open the `.gitconfig` file
 and start typing.
 
@@ -147,13 +147,13 @@ one individually, I'll just paste in the pertinent parts of my `.gitconfig` file
 the correct order of parameters that kdiff3 likes.*)
 
 Now that I have all three tools set up, I can switch between them just by changing the value of the `tool` line of the `[merge]` or `[diff]` section.
-You can do this either with your editor, or on the command line. To quickly change your merge tool from the command line, you'd type
+You can do this either with your editor, or on the command line. To quickly change your merge tool from the command line, you'd type...
 
 ```sh
 git config --global merge.tool kdiff3
 ```
 
-and to set your diff tool to diffmerge, you'd type
+...and to set your diff tool to diffmerge, you'd type...
 
 ```sh
 git config --global diff.tool diffmerge
